@@ -1,0 +1,17 @@
+<div class="card" *ngIf="patient">
+  <div class="card-header bg-primary text-white">
+    <h2>Patient Details</h2>
+  </div>
+  <div class="card-body">
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <p><strong>ID:</strong> {{ patient.id }}</p>
+    <p><strong>Name:</strong> {{ patient.nom }} {{ patient.prenom }}</p>
+    <p><strong>Date of Birth:</strong> {{ patient.dateNaissance }}</p>
+    <p><strong>CIN:</strong> {{ patient.cin }}</p>
+    <p><strong>Sex:</strong> {{ patient.sexe }}</p>
+    <p><strong>Address:</strong> {{ patient.adresse }}</p>
+    <p><strong>Type of Care:</strong> {{ patient.typedesoin }}</p>
+    <p><strong>INP:</strong> {{ patient.inp }}</p>
+    <a routerLink="/patients" class="btn btn-primary">Back to List</a>
+  </div>
+</div>

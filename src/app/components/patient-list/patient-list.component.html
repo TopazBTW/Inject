@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header bg-primary text-white">
+    <h2>Patients List</h2>
+  </div>
+  <div class="card-body">
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>CIN</th>
+        <th>Sex</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let patient of patients">
+        <td>{{ patient.id }}</td>
+        <td>{{ patient.nom }} {{ patient.prenom }}</td>
+        <td>{{ patient.cin }}</td>
+        <td>{{ patient.sexe }}</td>
+        <td>
+          <button class="btn btn-sm btn-info me-1" (click)="viewPatient(patient.id!)">View</button>
+          <button class="btn btn-sm btn-warning me-1" (click)="editPatient(patient.id!)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="deletePatient(patient.id!)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
